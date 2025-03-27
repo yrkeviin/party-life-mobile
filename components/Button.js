@@ -11,8 +11,12 @@ export default function Button({ onPress, text}) {
 const styles = StyleSheet.create({
     button: {
         backgroundColor: '#EEB230',
-        padding: 20,
-        borderRadius: 5,
+        padding: 10,
+        marginTop: 20,
+        width: 300,
+        display: "flex",
+        alignItems: "center",
+        borderRadius: 50,
     },
     textButton: {
         color: '#15002E',
