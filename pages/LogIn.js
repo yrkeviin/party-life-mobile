@@ -7,7 +7,7 @@ export default function LogIn({ navigation }) {
         <View style={styles.container}>
             <Logo />
             <Button text={"Entrar"} onPress={() => navigation.navigate("SignIn")} />
-            <Button text={"Inscreva-se"} />
+            <Button text={"Inscreva-se" }/>
         </View>
     );
 };
@@ -21,4 +21,5 @@ const styles = StyleSheet.create({
         height: '100%',
         gap: 10,
     },
+    
 });

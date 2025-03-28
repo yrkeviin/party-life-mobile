@@ -1,5 +1,6 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { TouchableOpacity, Image } from "react-native";
 import SignIn from "../pages/SignIn";
 import LogIn from "../pages/LogIn";
 
@@ -10,7 +11,32 @@ export default function StackNavigator() {
     return (
         <Stack.Navigator initialRouteName="LogIn">
             <Stack.Screen name="LogIn" component={LogIn} options={{headerShown: false}} />
-            <Stack.Screen name="SignIn" component={SignIn} />
+            <Stack.Screen 
+                name="SignIn" 
+                component={SignIn} 
+                options={({ navigation }) => ({
+                    headerShown: true,
+                    headerLeft: () => (
+                        <TouchableOpacity onPress={() => navigation.goBack()}>
+                            <Image 
+                                source={{ uri: 'https://cdn-icons-png.flaticon.com/512/271/271218.png'}} 
+                                style={{ width: 24, height: 24, marginLeft: 10, tintColor: '#EEB230'}}
+                            />
+                        </TouchableOpacity>
+                    ),
+                    headerTitle: 'Voltar', 
+                    headerStyle: {
+                        backgroundColor: '#15002E',
+                        borderBottomWidth: 0,
+                        elevation: 0, 
+                        shadowOpacity: 0, 
+                    },
+                    headerTitleStyle: {
+                        color: '#EEB230',
+                        fontSize: 18,
+                    },
+                })}
+            />
         </Stack.Navigator>
     );
 }
