@@ -1,6 +1,6 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { TouchableOpacity, Image } from "react-native";
+import { TouchableOpacity, Image, StatusBar } from "react-native";
 import SignIn from "../pages/SignIn";
 import LogIn from "../pages/LogIn";
 
@@ -9,6 +9,8 @@ const Stack = createNativeStackNavigator();
 
 export default function StackNavigator() {
     return (
+        <>
+        <StatusBar barStyle="light-content" />
         <Stack.Navigator initialRouteName="LogIn">
             <Stack.Screen name="LogIn" component={LogIn} options={{headerShown: false}} />
             <Stack.Screen 
@@ -24,19 +26,16 @@ export default function StackNavigator() {
                             />
                         </TouchableOpacity>
                     ),
-                    headerTitle: 'Voltar', 
+                    headerTitle: '', 
                     headerStyle: {
                         backgroundColor: '#15002E',
                         borderBottomWidth: 0,
                         elevation: 0, 
                         shadowOpacity: 0, 
                     },
-                    headerTitleStyle: {
-                        color: '#EEB230',
-                        fontSize: 18,
-                    },
                 })}
             />
         </Stack.Navigator>
+        </>
     );
 }
