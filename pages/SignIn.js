@@ -12,7 +12,7 @@ export default function SignIn (){
         <View style={styles.container}>
             <Logo />
             <View className={styles.form}>
-                <Input placeholder="Email" />
+                <Input placeholder="Email"/>
                 <Input placeholder="Senha" secureTextEntry={true} />
             </View>
             <Button text="Entrar" />

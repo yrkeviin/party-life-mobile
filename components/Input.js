@@ -2,17 +2,31 @@ import { TextInput, View, StyleSheet } from 'react-native';
 
 export default function Input({ placeholder, secureTextEntry}) {
     return (
-        <View style={styles.input}>
+        <View>
+            <label style={styles.placeholder}>
+                {placeholder}
+            </label>
+            <View style={styles.input}>
             <TextInput 
-                placeholder={placeholder} 
                 secureTextEntry={secureTextEntry} 
                 style={styles.textInput} 
-                placeholderTextColor="#FFF" 
+                InputTextColor="#FFF" 
+                
             />
+            </View>
         </View>
     );
 };
 const styles = StyleSheet.create({
+    placeholder: {
+        marginLeft: "1rem", 
+        color: "#EEB230"
+    },
+    textInput: {
+        color: "#EEB230", 
+        width: "100%",
+        height: "100%"
+    },
     input: {
         width: 300,
         backgroundColor: '#15002E',
